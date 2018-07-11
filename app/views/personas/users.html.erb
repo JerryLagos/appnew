@@ -1,0 +1,12 @@
+<%= form_tag :action => 'users' do %>
+  Form contents
+	<p>Cedula: <%= text_field_tag 'cedula_usuario', @cedula %> </p>
+	<p>Nombre: <%= text_field_tag 'nombre_usuario', @nombre %> </p>
+	<p>Apellido: <%= text_field_tag 'apellido_usuario', @apellido %> </p>
+	<%= submit_tag 'Registrate'%>
+
+
+	<% @usuarios.each do |n|  %>
+		<%= n.cedula %> <br>
+	<% end %>
+<% end %>
