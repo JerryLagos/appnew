@@ -11,5 +11,7 @@ class PersonasController < ApplicationController
   	@creado = Persona.create({nombre: @nombre, apellido: @apellido, cedula: @cedula})
   	@usuarios = Persona.all
   
+
+  change to my students 
   end
 end
