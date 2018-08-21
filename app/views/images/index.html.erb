@@ -1,0 +1,23 @@
+<h1>Listing articles</h1>
+ <h1>Hello, Rails!</h1>
+<%= link_to 'Mis imagenes', controller: 'images' %>
+<%= link_to 'New Imagen', new_image_path %>
+
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Text Counter</th>
+    <th>Localitacion</th>
+  </tr>
+ 
+  <% @allImg.each do |image| %>
+    <tr>
+      <td><%= image.description %></td>
+      <td><%= image.like_counter %></td>
+      <td><%= image.localitation %></td>
+      <td><%= link_to 'Destroy', image_path(image),
+                    method: :delete, data: { confirm: 'Esta seguro ?' } %></td>
+    </tr>
+  <% end %>
+</table>

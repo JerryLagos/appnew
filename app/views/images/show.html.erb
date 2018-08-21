@@ -1,0 +1,18 @@
+<h2>Hola <%= @usuario %> <% @usuario %> </h2>
+<p>
+  <strong>Description</strong>
+  <%= @imagshow.description %>
+</p>
+ 
+<p>
+  <strong>Contador de likes</strong>
+  <%= @imagshow.like_counter %>
+</p>
+
+<p>
+	<b>Geolocalitation</b>
+	<%= @imagshow.localitation %>
+</p>
+
+
+<%= link_to 'Back', images_path %>

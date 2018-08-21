@@ -10,17 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_10_140337) do
+ActiveRecord::Schema.define(version: 2018_07_27_010150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "nombre"
+    t.string "placa"
+    t.string "marca"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "examples", force: :cascade do |t|
+    t.string "titulo"
+    t.string "texto"
+    t.string "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "description", null: false
+    t.integer "like_counter"
+    t.integer "localitation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,11 +53,28 @@ ActiveRecord::Schema.define(version: 2018_07_10_140337) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "usuario", id: :bigint, default: nil, force: :cascade do |t|
-    t.string "apellido"
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.integer "document"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
     t.string "nombre"
-    t.string "user"
-    t.string "password"
+    t.string "apellido"
+    t.string "correo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

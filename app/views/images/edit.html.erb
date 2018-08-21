@@ -1,0 +1,17 @@
+<p>Hola desde aqui</p>
+
+<%= form_for @image, url: images_path(@image) do |f|%>
+	<%= f.label :description%>
+	<%= f.text_field :description%>
+
+	<%= f.label :like_counter %>
+	<%= f.text_field :like_counter %>
+
+	<%= f.label :localitation %>
+	<%= f.text_field :localitation %>
+
+	<%= f.submit %>
+<% end %>
+
+
+<%= link_to 'Back', images_path %>
