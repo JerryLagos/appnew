@@ -31,7 +31,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -60,8 +60,10 @@ Rails.application.configure do
    :user_name            => 'plataformamillas@gmail.com',
    :password             => 'MILLAS2018',
    :authentication       => "plain",
-  :enable_starttls_auto => true
+   :enable_starttls_auto => true
   }
+
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

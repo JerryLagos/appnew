@@ -7,14 +7,14 @@ class UsuariosController < ApplicationController
   	@usuario = Usuario.new usuario_params
 
     if @usuario.save
-        UserMailer.with(user: @usuario).welcome_email.deliver_later
+        UserMailer.with(user: @usuario).welcome_email.deliver
 
         # format.html { redirect_to(@usuario, notice: 'User was successfully created.') }
         # format.json { render json: @usuario, status: :created, location: @usuario } 
+        redirect_to @usuario
       
     end
 
-    redirect_to @usuario
   end
 
   # Proceso para ver un usuario

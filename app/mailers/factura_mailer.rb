@@ -1,0 +1,2 @@
+class FacturaMailer < ApplicationMailer
+end
